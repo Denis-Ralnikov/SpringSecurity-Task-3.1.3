@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Save user page</title>
+</head>
+<body>
+<h1> Save user</h1>
+<div>
+    <form action="/admin/saveUser" method="post">
+        <input type="text" name="username" placeholder="Username">
+        <input type="text" name="firstName" placeholder="FirstName">
+        <input type="text" name="lastName" placeholder="LastName">
+        <input type="text" name="email" placeholder="email">
+        <input type="text" name="password" placeholder="Password">
+        <input type="text" name="age" placeholder="Age">
+        <div>
+            <input type="checkbox" name="role_admin" id="role_admin" value="ROLE_ADMIN">
+            <label for="role_admin">Admin</label>
+            <input type="hidden" name="role_admin" value="null">
+        </div>
+        <button type="submit">Сохранить пользователя</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<h1>All Users</h1>
+<br>
+<div>
+    <table border="1" style="text-align: center" cellpadding="2px">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Username</th>
+            <th>Id</th>
+            <th>Edit user</th>
+            <th>Delete user</th>
+        </tr>
+        <tr th:each="user : ${listUser}">
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.age}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.id}"></td>
+            <td><a th:href="'/admin/' + ${user.username} + '/edit'"><button>Изменить пользователя</button></a></td>
+            <td><a th:href="'/admin/' + ${user.username} + '/delete'"><button>Удалить пользователя</button></a> </td>
+        </tr>
+    </table>
+    <br>
+    <a href="/admin/saveUser"><button>Добавить пользователя</button></a>
+    <a href="/user"><button>Информация об аккаунте</button></a>
+    <a href="/logout"><button>Выйти из аккаунта</button></a>
+    <br>
+</div>
+</body>
+</html>

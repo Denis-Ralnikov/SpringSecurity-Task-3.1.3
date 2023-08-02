@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User page</title>
+</head>
+<body>
+<h1> Welcome spring boot security page!</h1>
+<div>
+    <table border="1" style="text-align: center">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Username</th>
+            <th>Id</th>
+        </tr>
+        <tr th:object="${users}">
+            <td th:text="${users.firstName}"></td>
+            <td th:text="${users.lastName}"></td>
+            <td th:text="${users.email}"></td>
+            <td th:text="${users.age}"></td>
+            <td th:text="${users.username}"></td>
+            <td th:text="${users.id}"></td>
+        </tr>
+    </table>
+    <a href="/logout"><button>Выйти из аккаунта</button></a>
+</div>
+</body>
+</html>
