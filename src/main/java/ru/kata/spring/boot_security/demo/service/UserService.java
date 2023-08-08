@@ -50,6 +50,10 @@ public class UserService implements UserDetailsService{
         }
         return user;
     }
+
+    public User findById(Long id){
+        return userRepositories.findById(id).orElseGet(null);
+    }
     public void deleteUser(String username){
         User user= findByUsername(username);
         userRepositories.delete(user);
